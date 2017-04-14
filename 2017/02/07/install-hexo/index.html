@@ -1,0 +1,722 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="install hexo," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="第一次搞博客这么个东西，有点小激动。其实现在的我是个水货，离干货还差十万八千里，所以现在的我只能借着别人的脚印去一一印证。虽然很多内容都是借鉴别人的，但我在想看一遍，做一遍，写一遍，感觉应该会不一样吧！说说这篇文章。我是偶然一次看到了与佳期的简书。之前像简书之类的都是直接去写文章，而现在可以在写东西之前自己动手去做一些符合自己想法的东西，还是挺有意思的。想着以后学着自己搭建服务器，做界面，上传自己">
+<meta property="og:type" content="article">
+<meta property="og:title" content="install-hexo">
+<meta property="og:url" content="http://yoursite.com/2017/02/07/install-hexo/index.html">
+<meta property="og:site_name" content="Fruits's Blog">
+<meta property="og:description" content="第一次搞博客这么个东西，有点小激动。其实现在的我是个水货，离干货还差十万八千里，所以现在的我只能借着别人的脚印去一一印证。虽然很多内容都是借鉴别人的，但我在想看一遍，做一遍，写一遍，感觉应该会不一样吧！说说这篇文章。我是偶然一次看到了与佳期的简书。之前像简书之类的都是直接去写文章，而现在可以在写东西之前自己动手去做一些符合自己想法的东西，还是挺有意思的。想着以后学着自己搭建服务器，做界面，上传自己">
+<meta property="og:image" content="https://raw.githubusercontent.com/fruitsw/essayImage/master/hexo-exmple.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/fruitsw/essayImage/master/githubimage.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/fruitsw/essayImage/master/blogfilelist.png">
+<meta property="og:updated_time" content="2017-02-08T02:20:34.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="install-hexo">
+<meta name="twitter:description" content="第一次搞博客这么个东西，有点小激动。其实现在的我是个水货，离干货还差十万八千里，所以现在的我只能借着别人的脚印去一一印证。虽然很多内容都是借鉴别人的，但我在想看一遍，做一遍，写一遍，感觉应该会不一样吧！说说这篇文章。我是偶然一次看到了与佳期的简书。之前像简书之类的都是直接去写文章，而现在可以在写东西之前自己动手去做一些符合自己想法的东西，还是挺有意思的。想着以后学着自己搭建服务器，做界面，上传自己">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/fruitsw/essayImage/master/hexo-exmple.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/02/07/install-hexo/"/>
+
+
+
+
+
+  <title> install-hexo | Fruits's Blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Fruits's Blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+    
+      <p class="site-subtitle"></p>
+    
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/02/07/install-hexo/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="fruitsw">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="https://raw.githubusercontent.com/fruitsw/essayImage/master/icon.png">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Fruits's Blog">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="Fruits's Blog" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                install-hexo
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-02-07T10:32:46+08:00">
+                2017-02-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>第一次搞博客这么个东西，有点小激动。其实现在的我是个水货，离干货还差十万八千里，所以现在的我只能借着别人的脚印去一一印证。虽然很多内容都是借鉴别人的，但我在想看一遍，做一遍，写一遍，感觉应该会不一样吧！说说这篇文章。我是偶然一次看到了<a href="http://www.jianshu.com/p/13e64c9e2295" target="_blank" rel="external">与佳期的简书</a>。之前像简书之类的都是直接去写文章，而现在可以在写东西之前自己动手去做一些符合自己想法的东西，还是挺有意思的。想着以后学着自己搭建服务器，做界面，上传自己的东西，嘿嘿，请允许我无耻的笑笑。。。收。言归正传，现在开始。哦对了这个是在Mac系统下完成的。<br><a id="more"></a></p>
+<h2 id="环境配置"><a href="#环境配置" class="headerlink" title="环境配置"></a>环境配置</h2><p>安装Hexo前你需要确定自己已经安装了下面俩玩意：<br>∙ <a href="https://nodejs.org/en/" target="_blank" rel="external">Node.js</a>  (用来生成静态页面)<br>∙ <a href="https://git-scm.com/" target="_blank" rel="external">Git</a>   (用来将本地Hexo内容提交到Github上)</p>
+<p>其中Git就不用介绍了，下面说一下 Node.js 的安装方法(<a href="https://hexo.io/docs/" target="_blank" rel="external">Hexo官网</a>推荐使用<a href="https://github.com/creationix/nvm" target="_blank" rel="external">nvm</a>安装)：</p>
+<p>这里下载工具用的是wget(很强大的下载工具)，而安装wget只需一步:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ brew install wget  //应该都安装Homebrew了吧</div></pre></td></tr></table></figure></p>
+<p>首先验证nvm下载路径</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | sh</div></pre></td></tr></table></figure>
+<p>Wget下载:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ wget -qO- https://raw.githubusercontent.com/creationix/nvm/master/install.sh | sh</div></pre></td></tr></table></figure>
+<p>nvm安装完成后退出并重启terminal，执行命令：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ nvm install stable</div></pre></td></tr></table></figure></p>
+<p>Node.js安装完成。</p>
+<h2 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h2><p>当Git和Node.js安装完成后，执行以下命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo npm install -g hexo-cli</div></pre></td></tr></table></figure>
+<p>接着输入管理员密码即可(-g 代表全局安装)。</p>
+<h2 id="初始化本地站点"><a href="#初始化本地站点" class="headerlink" title="初始化本地站点"></a>初始化本地站点</h2><p>首先进入你想要初始化站点的位置(cd)，执行 hexo init 命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo init blog</div></pre></td></tr></table></figure>
+<p>blog为你建立的文件夹，即为本地站点。cd到blog文件夹下， 执行如下命令， 安装npm：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install</div></pre></td></tr></table></figure>
+<p>执行如下命令，开启本地服务器：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo s</div></pre></td></tr></table></figure>
+<p>哈哈，中可以看到界面了：打开浏览器输入：<a href="http://localhost:4000" target="_blank" rel="external">http://localhost:4000</a> ，可以看到如下界面；</p>
+<p><img src="https://raw.githubusercontent.com/fruitsw/essayImage/master/hexo-exmple.png" alt="http://localhost:4000"></p>
+<p>本地设置完成后，下面就可以关联GitHub仓库了。</p>
+<h2 id="关联GitHub"><a href="#关联GitHub" class="headerlink" title="关联GitHub"></a>关联GitHub</h2><h3 id="创建仓库"><a href="#创建仓库" class="headerlink" title="创建仓库"></a>创建仓库</h3><p>登陆GitHub账号，创建一个仓库，命名规则 “用户名.github.io”，结果如下图所示：</p>
+<p><img src="https://raw.githubusercontent.com/fruitsw/essayImage/master/githubimage.png" alt="&quot;Github仓库&quot;"></p>
+<p>cd到本地站点下（Blog文件夹下）执行 ：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ ll</div></pre></td></tr></table></figure>
+<p>列出blog文件夹下的内容：</p>
+<p><img src="https://raw.githubusercontent.com/fruitsw/essayImage/master/blogfilelist.png" alt="文件目录"></p>
+<p>用vim打开_config.yml，命令如下：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ vim _config.yml</div></pre></td></tr></table></figure>
+<p>打开后往下滑到最后，修改成下边的样子：</p>
+<p>deploy:<br>    type: git<br>    repository: <a href="https://github.com/fruitsw/fruitsw.github.io" target="_blank" rel="external">https://github.com/fruitsw/fruitsw.github.io</a><br>    branch: master</p>
+<p>你需要将repository后fruitsw换成你自己的用户名，地址在上图2位置获取。hexo 3.1.1版本后type:值为git。</p>
+<p>注意：在配置所有的_config.yml文件时（包括theme中的），在所有的冒号:后边都要加一个空格，否则执行hexo命令会报错，切记 切记,我写错后试了一下，的确是这样。</p>
+<p>在blog文件夹目录下执行生成静态页面命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate        或者：hexo g</div></pre></td></tr></table></figure>
+<p>此时若出现如下报错：<br>ERROR Local hexo not found in ~/blog<br>ERROR Try runing: ‘npm install hexo –save’<br>则执行命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install hexo --save</div></pre></td></tr></table></figure>
+<p>若无报错，自行忽略此步骤。</p>
+<p>再执行配置命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy            或者：hexo d</div></pre></td></tr></table></figure>
+<p>注意：若执行命令hexo deploy仍然报错：无法连接git或找不到git，则执行如下命令来安装hexo-deployer-git：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install hexo-deployer-git --save</div></pre></td></tr></table></figure>
+<p>再次执行hexo generate和hexo deploy命令。</p>
+<p>若你未关联Github，则执行hexo deploy命令时终端会提示你输入Github的用户名和密码，即</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Username <span class="keyword">for</span> <span class="string">'https://github.com'</span>:</div><div class="line">Password <span class="keyword">for</span> <span class="string">'https://github.com'</span>:</div></pre></td></tr></table></figure>
+<p>hexo deploy命令执行成功后，浏览器中打开网址<a href="http://fruitsw.github.io（将fruitsw换成你的用户名）能看到和打开http://localhost:4000时一样的页面。" target="_blank" rel="external">http://fruitsw.github.io（将fruitsw换成你的用户名）能看到和打开http://localhost:4000时一样的页面。</a></p>
+<p>至此基本完成hexo与GitHub关联，但每次push都需要密码。为避免每次输入Github用户名和密码的麻烦，可参照第二节方法。</p>
+<h2 id="添加ssh-key到Github"><a href="#添加ssh-key到Github" class="headerlink" title="添加ssh key到Github"></a>添加ssh key到Github</h2><h3 id="检查SSH-keys是否存在Github"><a href="#检查SSH-keys是否存在Github" class="headerlink" title="检查SSH keys是否存在Github"></a>检查SSH keys是否存在Github</h3><p>执行如下命令，检查SSH keys是否存在。如果有文件id_rsa.pub或id_dsa.pub，则直接进入步骤2.3将SSH key添加到Github中，否则进入下一步生成SSH key。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ ls -al ~/.ssh</div></pre></td></tr></table></figure>
+<h3 id="生成新的ssh-key"><a href="#生成新的ssh-key" class="headerlink" title="生成新的ssh key"></a>生成新的ssh key</h3><p>执行如下命令生成public/private rsa key pair，注意将your_email@example.com换成你自己注册Github的邮箱地址。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ ssh-keygen -t rsa -C <span class="string">"your_email@example.com"</span></div></pre></td></tr></table></figure>
+<p>默认会在相应路径下（~/.ssh/id_rsa.pub）生成id_rsa和id_rsa.pub两个文件。</p>
+<h3 id="将ssh-key添加到Github中"><a href="#将ssh-key添加到Github中" class="headerlink" title="将ssh key添加到Github中"></a>将ssh key添加到Github中</h3><p>Find前往文件夹~/.ssh/id_rsa.pub打开id_rsa.pub文件，里面的信息即为SSH key，将这些信息复制到Github的Add SSH key页面即可。</p>
+<p>进入Github –&gt; Settings –&gt; SSH keys –&gt; add SSH key:</p>
+<p>Title里任意添一个标题，将复制的内容粘贴到Key里，点击下方Add key即可。</p>
+<h2 id="发布文章"><a href="#发布文章" class="headerlink" title="发布文章"></a>发布文章</h2><p>终端cd到blog文件夹下，执行如下命令新建文章：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"postName"</span> 创建文章文件</div></pre></td></tr></table></figure>
+<p>名为postName.md的文件会建在目录/blog/source/_posts下。用你喜欢的编辑器来编辑你的文章。</p>
+<p>文章编辑完成后，终端cd到blog文件夹下，执行如下命令来发布：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo clean</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo g  或hexo generate    //生成静态网页</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo d  或hexo deploy。    //将文章部署到GitHub上</div></pre></td></tr></table></figure>
+<p>至此，Mac上搭建基于Github的Hexo博客就完成了。下面的内容是介绍安装theme，添加评论功能和绑定个人域名。</p>
+<h2 id="安装theme"><a href="#安装theme" class="headerlink" title="安装theme"></a>安装theme</h2><p>你可以到<a href="https://hexo.io/themes/" target="_blank" rel="external">Hexo官网主题</a>页去搜寻自己喜欢的theme。这里以hexo-theme-next为例,终端cd到 blog 目录下执行如下命令(注意一定要在blog文件夹下完成)：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git <span class="built_in">clone</span> https://github.com/iissnan/hexo-theme-next themes/next</div></pre></td></tr></table></figure>
+<p>将blog目录下_config.yml里theme的名称landscape修改为next。</p>
+<p>注意：如果你一不小心在根目录下执行 git clone…… 可能会报错，网上会有些建议执行 git init 初始化git仓库，这里千万不要git init，因为它会把整个根目录作为git仓库，占用大量的内存，如果你一不小心这么做了，你需要删除.git文件，<br>第一步显示隐藏文件夹以及文件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ defaults write com.apple.finder AppleShowAllFiles -boolean <span class="literal">true</span></div><div class="line">$ killall Finder</div></pre></td></tr></table></figure></p>
+<p>第二步：进入根目录删除.git文件<br>第三步：恢复隐藏文件夹<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ defaults write com.apple.finder AppleShowAllFiles -boolean <span class="literal">false</span></div><div class="line">$ killall Finder</div></pre></td></tr></table></figure></p>
+<p>终端cd到blog目录下执行如下命令(每次部署文章的步骤)：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo clean           //清除缓存文件 (db.json) 和已生成的静态文件 (public)</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo g             //生成缓存和静态文件</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo d             //重新部署到服务器</div></pre></td></tr></table></figure>
+<p>至于更改theme内容，比如名称，描述，头像等去修改blog/_config.yml文件和blog/themes/next/_config.yml文件中对应的属性名称即可， 不要忘记冒号:后加空格。 <a href="http://theme-next.iissnan.com/" target="_blank" rel="external">NexT 使用文档</a>里有极详细的介绍。</p>
+<p>你也可以绑定个人域名，因为我没有个人域名，无法尝试，有需要的可以看这篇文章的原文<a href="http://www.jianshu.com/p/13e64c9e2295" target="_blank" rel="external">与佳期的简书</a>。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/install-hexo/" rel="tag"># install hexo</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/02/06/hello-world/" rel="next" title="Hello World">
+                <i class="fa fa-chevron-left"></i> Hello World
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+          
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="https://raw.githubusercontent.com/fruitsw/essayImage/master/icon.png"
+               alt="fruitsw" />
+          <p class="site-author-name" itemprop="name">fruitsw</p>
+          <p class="site-description motion-element" itemprop="description">There are no shortcuts to any place worth going.</p>
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#环境配置"><span class="nav-number">1.</span> <span class="nav-text">环境配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装Hexo"><span class="nav-number">2.</span> <span class="nav-text">安装Hexo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#初始化本地站点"><span class="nav-number">3.</span> <span class="nav-text">初始化本地站点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关联GitHub"><span class="nav-number">4.</span> <span class="nav-text">关联GitHub</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建仓库"><span class="nav-number">4.1.</span> <span class="nav-text">创建仓库</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加ssh-key到Github"><span class="nav-number">5.</span> <span class="nav-text">添加ssh key到Github</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#检查SSH-keys是否存在Github"><span class="nav-number">5.1.</span> <span class="nav-text">检查SSH keys是否存在Github</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#生成新的ssh-key"><span class="nav-number">5.2.</span> <span class="nav-text">生成新的ssh key</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#将ssh-key添加到Github中"><span class="nav-number">5.3.</span> <span class="nav-text">将ssh key添加到Github中</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#发布文章"><span class="nav-number">6.</span> <span class="nav-text">发布文章</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装theme"><span class="nav-number">7.</span> <span class="nav-text">安装theme</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">fruitsw</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+      <!-- UY BEGIN -->
+      <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid="></script>
+      <!-- UY END -->
+  
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+
+</body>
+</html>
