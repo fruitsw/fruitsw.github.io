@@ -93,7 +93,7 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/fruitsw/essayImage/master/hexo-exmple.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/fruitsw/essayImage/master/githubimage.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/fruitsw/essayImage/master/blogfilelist.png">
-<meta property="og:updated_time" content="2017-04-14T01:20:02.000Z">
+<meta property="og:updated_time" content="2017-04-14T01:36:02.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="install-hexo">
 <meta name="twitter:description" content="第一次搞博客这么个东西，有点小激动。其实现在的我是个水货，离干货还差十万八千里，所以现在的我只能借着别人的脚印去一一印证。虽然很多内容都是借鉴别人的，但我在想看一遍，做一遍，写一遍，感觉应该会不一样吧！说说这篇文章。我是偶然一次看到了与佳期的简书。之前像简书之类的都是直接去写文章，而现在可以在写东西之前自己动手去做一些符合自己想法的东西，还是挺有意思的.。">
@@ -386,7 +386,7 @@
 <h2 id="安装theme"><a href="#安装theme" class="headerlink" title="安装theme"></a>安装theme</h2><p>你可以到<a href="https://hexo.io/themes/" target="_blank" rel="external">Hexo官网主题</a>页去搜寻自己喜欢的theme。这里以hexo-theme-next为例,终端cd到 blog 目录下执行如下命令(注意一定要在blog文件夹下完成)：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git <span class="built_in">clone</span> https://github.com/iissnan/hexo-theme-next themes/next</div></pre></td></tr></table></figure>
 <p>将blog目录下_config.yml里theme的名称landscape修改为next。</p>
-<p>注意：如果你一不小心在根目录下执行 git clone…… 可能会报错，网上会有些建议执行 git init 初始化git仓库，这里千万不要git init，因为它会把整个根目录作为git仓库，占用大量的内存，如果你一不小心这么做了，你需要删除.git文件，<br>第一步显示隐藏文件夹以及文件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ defaults write com.apple.finder AppleShowAllFiles -boolean <span class="literal">true</span></div><div class="line">$ killall Finder</div></pre></td></tr></table></figure></p>
+<p>注意：如果你一不小心在根目录下执行 git clone…… 可能会报错，网上会有些建议执行 git init 初始化git仓库来解决这一问题，这里千万注意git init只能在相关的blog目录下执行，而不应该在根目录下初始化git，因为它会把整个根目录作为git仓库，回占用内存，如果你一不小心这么做了，你需要删除.git文件，（估计没人想把电脑磁盘当作仓库吧）<br>第一步显示隐藏文件夹以及文件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ defaults write com.apple.finder AppleShowAllFiles -boolean <span class="literal">true</span></div><div class="line">$ killall Finder</div></pre></td></tr></table></figure></p>
 <p>第二步：进入根目录删除.git文件<br>第三步：恢复隐藏文件夹<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ defaults write com.apple.finder AppleShowAllFiles -boolean <span class="literal">false</span></div><div class="line">$ killall Finder</div></pre></td></tr></table></figure></p>
 <p>终端cd到blog目录下执行如下命令(每次部署文章的步骤)：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo clean           //清除缓存文件 (db.json) 和已生成的静态文件 (public)</div></pre></td></tr></table></figure>
