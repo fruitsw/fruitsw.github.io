@@ -113,7 +113,7 @@
 <meta property="og:image" content="https://coding.net/u/badcoding/p/BlogImage/git/raw/master/Localization/localization3.png">
 <meta property="og:image" content="https://coding.net/u/badcoding/p/BlogImage/git/raw/master/Localization/localization4.png">
 <meta property="og:image" content="https://coding.net/u/badcoding/p/BlogImage/git/raw/master/Localization/localization5.png">
-<meta property="og:updated_time" content="2017-05-27T08:00:50.000Z">
+<meta property="og:updated_time" content="2017-05-27T08:05:04.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="国际化的那些事">
 <meta name="twitter:description" content="最近几天在做项目国际化，在此过程中体会到了什么是真正的搬砖。国际化做完之后手头工作暂时不是太多，可以写点东西。虽然国际化比较简单，但国际化毕竟用的不是太多时间长了容易忘记一些东西。所以想着还是记录一下吧。其中重点也只有APP内部修改语言而已。">
@@ -400,6 +400,7 @@
 <p>这里替换掉rootViewController，之前的rootViewController会被释放掉。 至此差不多快达到我们的目标了。</p>
 <p>此时如果APP重启，会重新加载资源文件，而此时依然会加载系统的语言所对应的资源文件，所以在上面将目标语言存在NSUserDefaults里，在app启动时加载NSUserDefaults存储的语言：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions &#123;</div><div class="line">    </div><div class="line">    <span class="keyword">if</span> ([[NSUserDefaults standardUserDefaults] objectForKey:@<span class="string">"myLanguage"</span>] &amp;&amp; ![[[NSUserDefaults standardUserDefaults] objectForKey:@<span class="string">"myLanguage"</span>] isEqualToString:@<span class="string">""</span>]) &#123;</div><div class="line">        [NSBundle <span class="built_in">set</span>Language:[[NSUserDefaults standardUserDefaults] objectForKey:@<span class="string">"myLanguage"</span>]];</div><div class="line">    &#125;</div><div class="line">    ...</div><div class="line">    </div><div class="line">    <span class="built_in">return</span> YES;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>最后别忘了如果后台在根据header头里面的Accept-Language来返回相应的语言时，需要重写header里面的A-L(AFNetworking会默认取系统的语言)。</p>
+<p><a href="https://github.com/fruitsw/Localization" target="_blank" rel="external">Demo源码请戳这里</a></p>
 <p>效果请看这里</p>
 <iframe height="590" width="320" src="https://coding.net/u/badcoding/p/BlogImage/git/raw/master/Localization/localization.gif">
 </iframe>
