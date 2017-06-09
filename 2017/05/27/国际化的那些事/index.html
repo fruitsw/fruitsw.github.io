@@ -113,7 +113,7 @@
 <meta property="og:image" content="https://coding.net/u/badcoding/p/BlogImage/git/raw/master/Localization/localization3.png">
 <meta property="og:image" content="https://coding.net/u/badcoding/p/BlogImage/git/raw/master/Localization/localization4.png">
 <meta property="og:image" content="https://coding.net/u/badcoding/p/BlogImage/git/raw/master/Localization/localization5.png">
-<meta property="og:updated_time" content="2017-05-27T08:05:04.000Z">
+<meta property="og:updated_time" content="2017-06-09T01:15:50.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="国际化的那些事">
 <meta name="twitter:description" content="最近几天在做项目国际化，在此过程中体会到了什么是真正的搬砖。国际化做完之后手头工作暂时不是太多，可以写点东西。虽然国际化比较简单，但国际化毕竟用的不是太多时间长了容易忘记一些东西。所以想着还是记录一下吧。其中重点也只有APP内部修改语言而已。">
@@ -384,7 +384,7 @@
         <p>最近几天在做项目国际化，在此过程中体会到了什么是真正的搬砖。国际化做完之后手头工作暂时不是太多，可以写点东西。虽然国际化比较简单，但国际化毕竟用的不是太多时间长了容易忘记一些东西。所以想着还是记录一下吧。其中重点也只有APP内部修改语言而已。<br><a id="more"></a></p>
 <h2 id="国际化原理"><a href="#国际化原理" class="headerlink" title="国际化原理"></a>国际化原理</h2><p>国际化其实都大同小异，其核心思想就是为每种语言单独定义一份资源。每种语言都有自己的xxx.lproj文件夹，加载资源时只需要加载相应语言文件夹下的资源就OK，这步可以系统为我们完成，也可以手动去做。<br>iOS就是通过xxx.lproj目录来定义每个语言的资源，这里的资源可以是图片，文本，Storyboard，Xib等。</p>
 <h2 id="创建国际化所需文件"><a href="#创建国际化所需文件" class="headerlink" title="创建国际化所需文件"></a>创建国际化所需文件</h2><p>新建工程是没有国际化文件的，所以首先创建名为Localizable.strings文件，如图1，所示：<br><img src="https://coding.net/u/badcoding/p/BlogImage/git/raw/master/Localization/localization1.png" alt="图1"></p>
-<p>创建好文件之后点击Localization.sting文件，在Xcode右工具栏中按提示操作，如图2，所示：<br><img src="https://coding.net/u/badcoding/p/BlogImage/git/raw/master/Localization/localization2.png" alt="图2"></p>
+<p>创建好文件之后点击Localizable.strings文件，在Xcode右工具栏中按提示操作，如图2，所示：<br><img src="https://coding.net/u/badcoding/p/BlogImage/git/raw/master/Localization/localization2.png" alt="图2"></p>
 <p>接着Xcode自动创建了Base和English两个国际化文件，如图3，所示：<br><img src="https://coding.net/u/badcoding/p/BlogImage/git/raw/master/Localization/localization3.png" alt="图3"></p>
 <p>如果你国际化语言中有英语，请勾选English文件，接着就可以创建其他的目标语言文件了，点击PROJECT，在Info中找到Localizations，点击加号来添加国际化目标文件，如图4，所示：<br><img src="https://coding.net/u/badcoding/p/BlogImage/git/raw/master/Localization/localization4.png" alt="图4"></p>
 <p>添加完之后就可以在项目工程中看到下面的文件，如图5，所示：<br><img src="https://coding.net/u/badcoding/p/BlogImage/git/raw/master/Localization/localization5.png" alt="图5"></p>
